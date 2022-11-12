@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="62a4c87f-e888-4ee5-81f2-76fc363716ce" >
+		<http:listener-connection host="${http.host}" port="${http.port}" />
+	</http:listener-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="9a8174ef-459c-4599-b95c-d92fa15d8c8f" file="config-${env}.yaml" />
+	<global-property doc:name="Global Property" doc:id="ca9758f2-9538-416a-98ef-eea75df1e47e" name="env" value="dev" />
+	<flow name="codereviewFlow" doc:id="108892df-e02f-4d74-9c9e-8abc20b2010e" >
+		<http:listener doc:name="Listener" doc:id="940e769b-4f02-4a16-86ea-73b5d375dd14" config-ref="HTTP_Listener_config" path="/test"/>
+		<logger level="INFO" doc:name="Logger" doc:id="edc79575-130a-4056-85de-4c35ac698615" message="#[payload]"/>
+	</flow>
+</mule>
