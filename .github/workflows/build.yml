@@ -32,5 +32,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: e34541d0712017ee748bd418f987ef8cb4fae632
-          SONAR_HOST_URL: http://192.168.29.69:9005/
+          SONAR_HOST_URL: https://192.168.29.69:9005/
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=knauf
