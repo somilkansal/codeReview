@@ -33,4 +33,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: eba3508d95c2a339f0e48316acb274e1e631fb2b
           SONAR_HOST_URL: https://192.168.29.69:9005/
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=knauf -Dsonar.host.url=http://192.168.29.69:9005 -Dsonar.login=sqp_eba3508d95c2a339f0e48316acb274e1e631fb2b -Dsonar.login=admin -Dsonar.password=admin123
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=gitrepo -Dsonar.host.url=http://192.168.29.69:9005 -Dsonar.login=sqp_eba3508d95c2a339f0e48316acb274e1e631fb2b -Dsonar.login=admin -Dsonar.password=admin123
